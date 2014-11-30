@@ -18,6 +18,8 @@
 		7A2841391A22A25B00E0234C /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2841381A22A25B00E0234C /* ball.png */; };
 		7A28413B1A22B3C800E0234C /* paddle1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A28413A1A22B3C800E0234C /* paddle1.png */; };
 		7A2843D91A245DC300E0234C /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2843D81A245DC300E0234C /* XCGLogger.swift */; };
+		7A28440F1A2ACED400E0234C /* Paddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28440E1A2ACED400E0234C /* Paddle.swift */; };
+		7A2844111A2AD61D00E0234C /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2844101A2AD61D00E0234C /* Ball.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		7A2841381A22A25B00E0234C /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		7A28413A1A22B3C800E0234C /* paddle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle1.png; sourceTree = "<group>"; };
 		7A2843D81A245DC300E0234C /* XCGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCGLogger.swift; sourceTree = "<group>"; };
+		7A28440E1A2ACED400E0234C /* Paddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paddle.swift; sourceTree = "<group>"; };
+		7A2844101A2AD61D00E0234C /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 		7A2841021A22A0B000E0234C = {
 			isa = PBXGroup;
 			children = (
+				7A2844101A2AD61D00E0234C /* Ball.swift */,
+				7A28440E1A2ACED400E0234C /* Paddle.swift */,
 				7A28410D1A22A0B000E0234C /* PONG3 */,
 				7A2841271A22A0B000E0234C /* PONG3Tests */,
 				7A28410C1A22A0B000E0234C /* Products */,
@@ -246,8 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2844111A2AD61D00E0234C /* Ball.swift in Sources */,
 				7A2843D91A245DC300E0234C /* XCGLogger.swift in Sources */,
 				7A2841151A22A0B000E0234C /* GameScene.swift in Sources */,
+				7A28440F1A2ACED400E0234C /* Paddle.swift in Sources */,
 				7A2841171A22A0B000E0234C /* GameViewController.swift in Sources */,
 				7A2841111A22A0B000E0234C /* AppDelegate.swift in Sources */,
 			);
@@ -441,6 +449,7 @@
 				7A2841301A22A0B000E0234C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A2841311A22A0B000E0234C /* Build configuration list for PBXNativeTarget "PONG3Tests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +458,7 @@
 				7A2841331A22A0B000E0234C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,17 +10,16 @@ import SpriteKit
 import CoreGraphics
 
 class GameScene: SKScene, SKPhysicsContactDelegate{
-    var topPaddle:SKSpriteNode = SKSpriteNode(imageNamed: "paddle1")
-    var bottomPaddle:SKSpriteNode = SKSpriteNode(imageNamed: "paddle1")
-    var ball:SKSpriteNode = SKSpriteNode(imageNamed: "ball")
+    var topPaddle = Paddle(imageNamed: "paddle1")
+    var bottomPaddle = Paddle(imageNamed: "paddle1")
+    var ball = Ball(imageNamed: "ball")
+    
+    
     let topPaddleLabel = "topPaddle"
     let bottomPaddleLabel = "bottomPaddle"
     let ceilingLabel = "ceiling"
     let floorLabel = "floor"
-    var meow = CGFloat(0)
 
-    let ballSpeed = 0.5
-    var paddleMoveSpeed = CGFloat(3.0)
     
     
     enum ColliderTypes: UInt32 {
@@ -31,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         case ceiling = 16
         case pong = 32
     }
+    
     func setupScene(){
         //set the ball physics velocity bounce
         self.backgroundColor = UIColor(red: 0, green: 0.4, blue: 0.32, alpha: 1.4)
@@ -45,7 +45,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     func addSpritesToScene(){
         self.addChild(topPaddle)
             topPaddle.position =  CGPointMake(self.frame.width/2, self.frame.height - 50)
-        self.setupTopPaddle()
         self.addChild(bottomPaddle)
             bottomPaddle.position = CGPointMake(self.frame.width/2, 50)
         self.addChild(ball)
@@ -55,40 +54,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     func setupStructures(){
         //setup ceiling, floor, and edges
 
-    }
-    
-    
-    func setupTopPaddle() {
-        topPaddleSprite()
-        topPaddleMotion()
-    }
-    
-    func topPaddleMotion(){
-        var position = topPaddle.position.x
-        let minX = topPaddle.size.width/2
-        let maxX = self.frame.size.width - topPaddle.size.width/2
-        let rangeX = maxX - minX
-        //let moveFarLeft = SKAction.moveToX(minX, duration: 4)
-        //let moveFarRight = SKAction.moveToX(maxX, duration: 4)
-        
-        if position > (self.frame.size.width - topPaddle.size.width/2) {
-            self.paddleMoveSpeed = -self.paddleMoveSpeed
-        }
-        else if position < minX{
-            self.paddleMoveSpeed = -self.paddleMoveSpeed
-        }
-            self.topPaddle.position.x += paddleMoveSpeed
-        
-        
-    }
-    
-    func topPaddleSprite(){
-        topPaddle.physicsBody = SKPhysicsBody(rectangleOfSize:topPaddle.size) //approximate the body to paddle1
-        topPaddle.physicsBody?.dynamic = false  //interacts with physics of scene
-        topPaddle.physicsBody?.friction = 0.0
-        topPaddle.physicsBody?.restitution = 1.0
-        topPaddle.physicsBody = SKPhysicsBody(edgeLoopFromRect: topPaddle.frame)
-        topPaddle.physicsBody?.usesPreciseCollisionDetection = true
     }
     
     func setupBall(position: CGPoint) -> SKNode{
@@ -139,7 +104,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     }
    
     override func update(currentTime: CFTimeInterval) {
-        self.topPaddleMotion()
 
     }
 
