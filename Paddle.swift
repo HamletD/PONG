@@ -10,7 +10,24 @@ import UIKit
 import SpriteKit
 
 class Paddle: SKSpriteNode {
+    
+    var paddleSpeed : CGFloat = 1.0
+    var maxX : CGFloat = UIScreen.mainScreen().bounds.width
+    
+    func paddleMotion(){
 
+        if self.position.x > maxX {
+            self.paddleSpeed = -self.paddleSpeed
+            println(maxX)
+        }
+          /*
+        else if position < minX{
+            self.paddleMoveSpeed = -self.paddleMoveSpeed
+        }*/
+            self.position.x += self.paddleSpeed
+        
+    }
+    
     //override init(){
         /*
         paddleMoveSpeed = CGFloat(3.0)
@@ -24,19 +41,6 @@ class Paddle: SKSpriteNode {
         //let moveFarRight = SKAction.moveToX(maxX, duration: 4)
     }
 
-    
-    func paddleMotion(){
-        /*
-        if self.position > maxX {
-            self.paddleMoveSpeed = -self.paddleMoveSpeed
-        }
-        else if position < minX{
-            self.paddleMoveSpeed = -self.paddleMoveSpeed
-        }
-        self.position.x += self.paddleMoveSpeed
-        */
-        
-    }
     
     /*
     func topPaddleSprite(){
